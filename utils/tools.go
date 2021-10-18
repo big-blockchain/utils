@@ -244,11 +244,6 @@ func BytesToString(b []byte) string {
 	return *(*string)(unsafe.Pointer(&b))
 }
 
-func JsonEncode(m interface{}) string {
-	res, _ := json.Marshal(m)
-	return BytesToString(res)
-}
-
 type M map[string]interface{}
 
 func (m M) Json() []byte {
