@@ -12,7 +12,7 @@ import (
 func LoggerInput(method string, input interface{}) {
 	params := M{
 		"method": method,
-		"input":  JsonEncode(input),
+		"input":  JsonUtils{}.JsonEncode(input),
 	}
 	log.Info(params)
 }
@@ -20,8 +20,8 @@ func LoggerInput(method string, input interface{}) {
 func LoggerOutput(method string, input, output interface{}, err error, start time.Time) {
 	params := M{
 		"method": method,
-		"input":  JsonEncode(input),
-		"output": JsonEncode(output),
+		"input":  JsonUtils{}.JsonEncode(input),
+		"output": JsonUtils{}.JsonEncode(output),
 		"times":  time.Now().Sub(start).Seconds(),
 	}
 	if err != nil {
@@ -35,7 +35,7 @@ func LoggerOutput(method string, input, output interface{}, err error, start tim
 func LoggerDebug(method string, info interface{}) {
 	params := M{
 		"method": method,
-		"input":  JsonEncode(info),
+		"input":  JsonUtils{}.JsonEncode(info),
 	}
 	log.Debug(params)
 }
