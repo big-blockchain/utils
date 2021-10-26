@@ -1,4 +1,4 @@
-module github.com/Nuts2015/utils
+module github.com/big-blockchain/utils
 
 go 1.16
 
