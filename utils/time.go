@@ -8,6 +8,9 @@ import (
 func NowUnix() int64 {
 	return time.Now().Unix()
 }
+func NowUTCUnix() int64 {
+	return time.Now().UTC().Unix()
+}
 
 //今天的日期
 func TodayDate() string {
